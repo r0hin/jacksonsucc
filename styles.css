@@ -1,0 +1,98 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+#banner {
+  opacity: 0.5;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+}
+
+.bannerBackground {
+  background: black;
+  position: absolute;
+  left: 0px; top: 0px;
+  height: 80vh;
+  width: 100%;
+}
+
+.bannerContent {
+  position: relative;
+  z-index: 2;
+}
+
+.bannerContent h1 {
+  text-align: center;
+  margin-top: calc(40vh - 56px);
+  margin-bottom: 0px;
+  color: white;
+  font-size: 84px;
+}
+
+.bannerContent h2 {
+  margin-top: 0px;
+  color: rgb(255, 255, 255, 0.9);
+  font-size: 32px;
+  text-align: center;
+}
+
+#header {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: calc(100% - 48px);
+  background: rgb(0, 0, 0, 0.5);
+  z-index: 4;
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#header img {
+  width: 64px;
+}
+
+#buttons a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-size: 16px;
+  margin-left: 32px;
+  margin-right: 32px;
+}
+
+#buttons a.active {
+  color: rgb(255, 217, 0);
+}
+
+.content {
+  margin-top: calc(80vh);
+  padding: 32px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 32px;
+  margin-top: 32px;
+}
+
+#footer {
+  position: relative;
+  width: calc(100% - 48px);
+  background: rgb(0, 0, 0, 0.9);
+  color: white;
+  z-index: 4;
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+a {
+  color: white;
+}
