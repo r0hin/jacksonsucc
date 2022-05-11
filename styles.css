@@ -121,6 +121,8 @@ th {
   border: 1px solid #ccc;
   text-align: left;
 }
-.breakfastimg{
-  width:80%;
+
+.breakfastimg {
+  width: 100%;
+  height: 100%;
 }
