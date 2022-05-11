@@ -1,41 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Jackson's UCC Website</title>
-</head>
-<body>
-
-  <div id="header">
-    <a href="index.html"><img src="./assets/jacksons.png" alt=""></a>
-    <div id="buttons">
-      <a href="index.html">Home</a>
-      <a href="clothing.html">Clothing</a>
-      <a href="events.html">Events</a>
-      <a href="news.html">News</a>
-      <a class="active" href="breakfast.html">Breakfast</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Jackson's UCC Website</title>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+  </head>
+  <body>
+    <div id="header">
+      <a href="index.html"><img src="./assets/jacksons.png" alt="" /></a>
+      <div id="buttons">
+        <a href="index.html">Home</a>
+        <a href="clothing.html">Clothing</a>
+        <a href="events.html">Events</a>
+        <a href="news.html">News</a>
+        <a class="active" href="breakfast.html">Breakfast</a>
+      </div>
     </div>
-  </div>
 
-  <div class="bannerBackground">
-    <img id="banner" src="https://images.squarespace-cdn.com/content/v1/5b351fd80dbda3ecb15460b2/1530210095217-ZY8G44S4G757PEC4YBN0/jhouse.jpg?format=2500w">
-    <div class="bannerContent">
-      <h1>House Breakfast</h1>
-      <h2>2021-2022</h2>
+    <div class="bannerBackground">
+      <img
+        id="banner"
+        src="https://images.squarespace-cdn.com/content/v1/5b351fd80dbda3ecb15460b2/1530210095217-ZY8G44S4G757PEC4YBN0/jhouse.jpg?format=2500w"
+      />
+      <div class="bannerContent">
+        <h1>House Breakfast</h1>
+        <h2>2021-2022</h2>
+      </div>
     </div>
-  </div>
 
+    <div class="content">
+      <h1 class="text-center">This weeks house breakfast is:</h1>
+      <h2 id="breakfast" class="text-center">House Breakfast</h2>
+      <img
+        id="breakfastimg"
+        src="./assets/breakfast.png"
+        alt="House Breakfast"
+        class="img-fluid breakfastimg"
+      />
+    </div>
 
-  <div class="content">
-    <p>Content...</p>
-  </div>
+    <div id="footer">
+      <p>&copy; Jackson's UCC 2022</p>
+      <p>
+        Created by
+        <a href="https://twitter.com/r0hin12" target="_blank">Rohin</a> &
+        Jefferson
+      </p>
+    </div>
+  </body>
+  <script type="module">
+    const firebaseConfig = {
+      apiKey: "AIzaSyAZgfM_wtoG4_LDyZqEhvP-A23lbc2ZgVE",
+      authDomain: "fxtions-13b3e.firebaseapp.com",
+      projectId: "fxtions-13b3e",
+      storageBucket: "fxtions-13b3e.appspot.com",
+      messagingSenderId: "629011280406",
+      appId: "1:629011280406:web:3444e22a30fc745b4dbb37",
+    };
 
-  <div id="footer">
-    <p>&copy; Jackson's UCC 2022</p>
-    <p>Created by <a href="https://twitter.com/r0hin12" target="_blank">Rohin</a></p>
-  </div>
-</body>
+    // Initialize Firebase
+    const app = firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
+    const element = document.getElementById("breakfast");
+    db.collection("jacksons")
+      .doc("breakfast")
+      .get()
+      .then((data) => {
+        document.getElementById("breakfast").innerText = data.data().title;
+        document.getElementById("breakfastimg").src = data.data().img;
+      });
+  </script>
 </html>
