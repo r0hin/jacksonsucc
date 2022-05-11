@@ -126,3 +126,7 @@ th {
   width: 100%;
   height: 100%;
 }
+
+.colorful-shadow-clone {
+  filter: blur(30px) brightness(1) saturate(1) !important;
+}
