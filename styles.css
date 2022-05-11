@@ -30,13 +30,13 @@ body {
   margin-top: calc(40vh - 56px);
   margin-bottom: 0px;
   color: white;
-  font-size: 84px;
+  font-size: 3rem;
 }
 
 .bannerContent h2 {
   margin-top: 0px;
   color: rgb(255, 255, 255, 0.9);
-  font-size: 32px;
+  font-size: 2rem;
   text-align: center;
 }
 
