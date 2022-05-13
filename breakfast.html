@@ -39,7 +39,7 @@
         id="breakfastimg"
         src="./assets/breakfast.png"
         alt="House Breakfast"
-        class="img-fluid breakfastimg"
+        class="img-fluid breakfastimg colorful-shadow"
       />
     </div>
 
@@ -48,10 +48,11 @@
       <p>
         Created by
         <a href="https://twitter.com/r0hin12" target="_blank">Rohin</a> &
-        Jefferson
+        <a href="https://github.com/JeffersonUCC/" target="_blank">Jefferson</a>
       </p>
     </div>
   </body>
+  <script src="https://unpkg.com/cosha"></script>
   <script type="module">
     const firebaseConfig = {
       apiKey: "AIzaSyAZgfM_wtoG4_LDyZqEhvP-A23lbc2ZgVE",
@@ -74,5 +75,8 @@
         document.getElementById("breakfast").innerText = data.data().title;
         document.getElementById("breakfastimg").src = data.data().img;
       });
+  </script>
+  <script>
+      cosha('colorful-shadow');
   </script>
 </html>
